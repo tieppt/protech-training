@@ -1,0 +1,9 @@
+<h2>Name: {{ name }}</h2>
+<p>DoB: {{ dob }}</p>
+<div>
+  <button (click)="onClick()">Show/Hide</button>
+  <!-- <input *ngIf="showInput" type="text" [(ngModel)]="name"> -->
+  <input *ngIf="showInput" type="text"
+    [ngModel]="name" (ngModelChange)="name = $event">
+
+</div>
