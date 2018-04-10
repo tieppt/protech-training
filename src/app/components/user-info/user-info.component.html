@@ -1,7 +1,11 @@
 <h2>Name: {{ name }}</h2>
 <p>DoB: {{ dob }}</p>
 <div>
-  <button (click)="onClick()">Show/Hide</button>
+  <button (click)="onClick()"
+    mat-icon-button color="accent"
+  >
+    <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+  </button>
   <!-- <input *ngIf="showInput" type="text" [(ngModel)]="name"> -->
   <input *ngIf="showInput" type="text"
     [ngModel]="name" (ngModelChange)="name = $event">

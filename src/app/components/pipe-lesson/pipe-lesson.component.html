@@ -1,0 +1,68 @@
+<p>
+  pipe-lesson works!
+</p>
+
+<p>
+  <mat-card>
+      My birthday (default): {{birthday | date}}
+  </mat-card>
+
+</p>
+
+<p>
+  <mat-card>
+    My birthday (shortDate): {{birthday | date:'shortDate'}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    My birthday (d/MMM/y): {{birthday | date:'d/MMM/y'}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    My name (titlecase): {{name | titlecase}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    My name (uppercase): {{name | uppercase}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    My name (lowercase): {{name | lowercase}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    <button (click)="addItem()"
+      mat-raised-button color="accent"
+    >
+      Add item
+    </button>
+    <ul>
+      <li *ngFor="let i of collection | slice:1:3">
+        {{ i | uppercase }}
+      </li>
+    </ul>
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    {{this | json}}
+  </mat-card>
+</p>
+
+<p>
+  <mat-card>
+    Temperature {{ temp | ptTemp:true:'C' }}
+  </mat-card>
+</p>
+

@@ -1,0 +1,20 @@
+<div *ngIf="post; else nocontent">
+  <h3>{{post.title}}</h3>
+  <div>
+    {{post.body}}
+  </div>
+  <button mat-mini-fab color="warn" (click)="deleteItem($event)">Del</button>
+</div>
+
+<!-- <ng-template [ngIf]="post" [ngIfElse]="nocontent">
+  <h3>{{post.title}}</h3>
+  <div>
+    {{post.body}}
+  </div>
+</ng-template> -->
+
+<ng-template #nocontent>
+  <div>
+    No content
+  </div>
+</ng-template>

@@ -1,0 +1,16 @@
+<h1>
+  Blog Component
+</h1>
+
+<p>
+  blog works!
+</p>
+
+<div>
+  <button mat-raised-button color="primary">Primary</button>
+</div>
+
+<ng-container *ngIf="true">
+  <ptt-blog-post *ngFor="let p of postList; index as i"
+    [post]="p" [show]="i % 2 === 0" (delete)="onDelete($event)"></ptt-blog-post>
+</ng-container>
