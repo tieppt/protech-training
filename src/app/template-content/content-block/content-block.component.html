@@ -1,0 +1,9 @@
+<header (click)="toggleBody()">
+  <h2>
+    <ng-content select=".title"></ng-content>
+  </h2>
+</header>
+
+<div class="block__body" *ngIf="isShow">
+  <ng-content></ng-content>
+</div>

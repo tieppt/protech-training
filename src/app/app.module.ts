@@ -13,6 +13,7 @@ import { ProductModule } from './product/product.module';
 import { BlogModule } from './blog/blog.module';
 import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
 import { TempConverterPipe } from './components/pipe-lesson/temp-converter.pipe';
+import { TemplateContentModule } from './template-content/template-content.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TempConverterPipe } from './components/pipe-lesson/temp-converter.pipe'
     FormsModule,
     ProductModule,
     BlogModule,
+    TemplateContentModule,
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
