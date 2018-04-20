@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs" *ngIf="tabPanels?.length > 0">
+  <li class="nav-item"
+    *ngFor="let tab of tabPanels"
+  >
+    <a
+      class="nav-link"
+      href="#"
+      [class.active]="tab.active"
+      (click)="selectTab($event, tab)"
+    >{{tab.tabTitle}}</a>
+  </li>
+</ul>
+
+<ng-content select="ptt-tab-panel"></ng-content>

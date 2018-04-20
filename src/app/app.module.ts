@@ -14,6 +14,7 @@ import { BlogModule } from './blog/blog.module';
 import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.component';
 import { TempConverterPipe } from './components/pipe-lesson/temp-converter.pipe';
 import { TemplateContentModule } from './template-content/template-content.module';
+import { TabsModule } from './tabs/tabs.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TemplateContentModule } from './template-content/template-content.modul
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    TabsModule
   ],
   bootstrap: [AppComponent]
 })
