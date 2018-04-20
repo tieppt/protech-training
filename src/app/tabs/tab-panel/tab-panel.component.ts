@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, HostBinding } from '@angular/core';
 
 let idx = 1;
 
@@ -12,6 +12,8 @@ export class TabPanelComponent implements OnInit {
   readonly id = idx++;
   private _active = false;
   @Input() tabTitle: string;
+
+  @HostBinding('attr.active')
   @Input()
   get active() {
     return this._active;
