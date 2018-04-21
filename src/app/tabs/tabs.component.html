@@ -12,3 +12,14 @@
     </ptt-tab-group>
   </div>
 </div>
+
+<div>
+  <ul>
+    <li *ngFor="let item of list">
+      {{item}}
+    </li>
+  </ul>
+</div>
+<button (click)="service.length = service.length + 20">Update</button>
+
+<p>DataService length: {{service.length}}</p>

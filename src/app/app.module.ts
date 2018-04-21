@@ -15,6 +15,9 @@ import { PipeLessonComponent } from './components/pipe-lesson/pipe-lesson.compon
 import { TempConverterPipe } from './components/pipe-lesson/temp-converter.pipe';
 import { TemplateContentModule } from './template-content/template-content.module';
 import { TabsModule } from './tabs/tabs.module';
+import { DataService } from './services/data.service';
+import { UserService } from './services/user.service';
+import { TapDiModule } from './tap-di/tap-di.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,23 @@ import { TabsModule } from './tabs/tabs.module';
     MatCheckboxModule,
     MatIconModule,
     MatCardModule,
-    TabsModule
+    TabsModule,
+    TapDiModule
+  ],
+  providers: [
+    // DataService,
+    // UserService
+    {
+      provide: DataService,
+      useClass: DataService,
+      deps: [
+        UserService
+      ]
+    },
+    {
+      provide: UserService,
+      useClass: UserService
+    }
   ],
   bootstrap: [AppComponent]
 })

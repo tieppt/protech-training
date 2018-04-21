@@ -35,5 +35,31 @@
         <div>abc</div>
       </ptt-content-block>
 </ptt-template-content> -->
-
+<p>
+  tab1
+</p>
 <ptt-tabs></ptt-tabs>
+
+<p>
+  tab2
+</p>
+<ptt-tabs></ptt-tabs>
+
+<p>
+  app
+</p>
+<div>
+  <ul>
+    <li *ngFor="let item of list">
+      {{item}}
+    </li>
+  </ul>
+</div>
+<button (click)="service.length = 20">Update</button>
+<p>DataService length: {{service.length}}</p>
+
+<p>
+  Tap-di
+</p>
+
+<ptt-tap-di></ptt-tap-di>
