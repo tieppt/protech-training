@@ -1,0 +1,41 @@
+<form #tdf="ngForm" (ngSubmit)="onSubmit(tdf)">
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Name"
+        name="cardName" [(ngModel)]="formValue.name"
+        #cardName="ngModel"
+        required minlength="6">
+    </mat-form-field>
+    <p class="error-field" *ngIf="!cardName.valid && cardName.touched">
+      <span *ngIf="cardName?.errors['required']">Name is required</span>
+      <span *ngIf="cardName?.errors['minlength']">Min length is 6</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Email"
+        name="email" [(ngModel)]="formValue.email"
+        #email="ngModel"
+        required type="email" email>
+    </mat-form-field>
+    <p class="error-field" *ngIf="!email.valid && email.touched">
+      <span *ngIf="email?.errors['required']">Email is required</span>
+      <span *ngIf="email?.errors['email']">Not valid email format</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Card Number" type="number"
+        name="cardNumber" [(ngModel)]="formValue.number"
+      >
+    </mat-form-field>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="CSC" type="number"
+        name="cardCSC" [(ngModel)]="formValue.csc"
+      >
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary">Submit</button>
+</form>

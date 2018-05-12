@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+.form__group {
+  width: 100%;
+  mat-form-field {
+    width: 100%;
+  }
+}
+.error-field {
+  color: red;
+}
+

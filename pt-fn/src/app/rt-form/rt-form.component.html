@@ -1,0 +1,33 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="cardName" required>
+    </mat-form-field>
+    <p class="error-field" *ngIf="!cardForm.get('cardName').valid &&
+    cardForm.get('cardName').touched
+    ">
+      <span *ngIf="cardForm.get('cardName').hasError('required')">Name is required</span>
+      <span *ngIf="cardForm.get('cardName').hasError('minlength')">Min length is 6</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="email" required>
+    </mat-form-field>
+    <p class="error-field" *ngIf="!cardFormEmail.valid && cardFormEmail.touched">
+      <span *ngIf="cardFormEmail.hasError('required')">Email is required</span>
+      <span *ngIf="cardFormEmail.hasError('email')">Not valid email format</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Card Number" type="number" formControlName="cardNumber">
+    </mat-form-field>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="CSC" type="number" formControlName="csc">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary">Submit</button>
+</form>
