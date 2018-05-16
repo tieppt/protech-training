@@ -1,4 +1,38 @@
 <h3>
+  User form
+</h3>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+    <p class="error-field" *ngIf="!nameCtrl.valid && nameCtrl.touched">
+      <span>Name is required</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+    <p class="error-field" *ngIf="!usernameCtrl.valid && usernameCtrl.touched">
+      <span>Username is required</span>
+    </p>
+  </div>
+  <div class="form__group">
+    <mat-form-field>
+      <input matInput placeholder="Email" type="email" formControlName="email">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button color="primary">Submit</button>
+</form>
+
+<div *ngIf="postSuccess">
+  <h3>Created new user:</h3>
+  <h4>User: {{postResponse.name}}</h4>
+</div>
+
+<h3>
   users list!
 </h3>
 
