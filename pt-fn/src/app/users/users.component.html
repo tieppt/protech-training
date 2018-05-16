@@ -1,3 +1,24 @@
-<p>
-  users works!
-</p>
+<h3>
+  users list!
+</h3>
+
+<div *ngIf="loading; else displayResponse">
+  Loading...
+</div>
+
+<ng-template #displayResponse>
+  <ul>
+    <li *ngFor="let user of userList" (click)="fetchPostByUserId(user.id)">
+      {{user.name}}
+    </li>
+  </ul>
+</ng-template>
+
+<div *ngIf="showPost">
+  <div *ngFor="let post of postByUser | slice:0:5">
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.body}}
+    </p>
+  </div>
+</div>
