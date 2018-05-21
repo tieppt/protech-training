@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -11,9 +12,6 @@ import { delay } from 'rxjs/operators';
 export class UsersComponent implements OnInit {
   userList: any[] = [];
   loading = false;
-
-  postByUser: any[] = [];
-  showPost = false;
 
   userForm: FormGroup;
 
@@ -28,7 +26,11 @@ export class UsersComponent implements OnInit {
     return this.userForm.get('username');
   }
 
-  constructor(private http: HttpClient, private fb: FormBuilder) { }
+  constructor(
+    private http: HttpClient,
+    private fb: FormBuilder,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.userForm = this.fb.group({
@@ -51,21 +53,8 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  fetchPostByUserId(userId) {
-    console.log(userId);
-    this.http.get('https://jsonplaceholder.typicode.com/posts', {
-      // params: new HttpParams().set('userId', userId)
-      params: {
-        userId: userId
-      }
-    })
-    .subscribe((data: any[]) => {
-      this.postByUser = data;
-      this.showPost = true;
-    }, err => {
-      this.postByUser = [];
-      this.showPost = false;
-    });
+  gotoUserDetail(userId) {
+    this.router.navigate(['/users/', userId]);
   }
 
   onSubmit() {

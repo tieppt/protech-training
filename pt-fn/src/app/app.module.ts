@@ -13,13 +13,42 @@ import {
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppNavComponent } from './app-nav/app-nav.component';
 import { AppComponent } from './app.component';
 import { TdFormComponent } from './td-form/td-form.component';
 import { RtFormComponent } from './rt-form/rt-form.component';
 import { UsersComponent } from './users/users.component';
+import { HomeComponent } from './home/home.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
+const routes: Routes = [{
+  path: '',
+  component: HomeComponent,
+  pathMatch: 'full'
+}, {
+  path: 'td-form',
+  component: TdFormComponent
+}, {
+  path: 'rt-form',
+  component: RtFormComponent
+}, {
+  path: 'users',
+  children: [
+    {
+      path: '',
+      component: UsersComponent,
+      pathMatch: 'full'
+    }, {
+      path: ':id',
+      component: UserDetailComponent
+    }
+  ]
+}, {
+  path: '**',
+  redirectTo: '/'
+}];
 
 @NgModule({
   declarations: [
@@ -27,7 +56,9 @@ import { UsersComponent } from './users/users.component';
     AppNavComponent,
     TdFormComponent,
     RtFormComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +66,7 @@ import { UsersComponent } from './users/users.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,

@@ -42,17 +42,8 @@
 
 <ng-template #displayResponse>
   <ul>
-    <li *ngFor="let user of userList" (click)="fetchPostByUserId(user.id)">
+    <li *ngFor="let user of userList" (click)="gotoUserDetail(user.id)">
       {{user.name}}
     </li>
   </ul>
 </ng-template>
-
-<div *ngIf="showPost">
-  <div *ngFor="let post of postByUser | slice:0:5">
-    <h4>{{post.title}}</h4>
-    <p>
-      {{post.body}}
-    </p>
-  </div>
-</div>

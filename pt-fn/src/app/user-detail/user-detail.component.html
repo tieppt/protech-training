@@ -1,0 +1,12 @@
+<p>
+  user-detail {{userId}}!
+</p>
+
+<div *ngIf="showPost">
+  <div *ngFor="let post of postByUser | slice:0:5">
+    <h4>{{post.title}}</h4>
+    <p>
+      {{post.body}}
+    </p>
+  </div>
+</div>

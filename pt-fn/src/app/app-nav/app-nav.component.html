@@ -8,9 +8,10 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a mat-list-item [routerLink]="['/td-form']" routerLinkActive="active">Template Driven Form</a>
+      <a mat-list-item [routerLink]="['/rt-form']" routerLinkActive="active">Reactive Form</a>
+      <a mat-list-item [routerLink]="['/users']" routerLinkActive="active">Users</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
