@@ -22,6 +22,7 @@ import { RtFormComponent } from './rt-form/rt-form.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [{
   path: '',
@@ -35,6 +36,7 @@ const routes: Routes = [{
   component: RtFormComponent
 }, {
   path: 'users',
+  canActivate: [AuthGuardService],
   children: [
     {
       path: '',
