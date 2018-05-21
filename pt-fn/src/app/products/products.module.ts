@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'products',
+    path: '',
     component: ProductsComponent,
     children: [
       {

@@ -47,6 +47,9 @@ const routes: Routes = [{
     }
   ]
 }, {
+  path: 'products',
+  loadChildren: './products/products.module#ProductsModule'
+}, {
   path: '**',
   redirectTo: '/'
 }];
@@ -67,7 +70,6 @@ const routes: Routes = [{
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ProductsModule,
     RouterModule.forRoot(routes),
     LayoutModule,
     MatToolbarModule,
