@@ -22,6 +22,7 @@ import { RtFormComponent } from './rt-form/rt-form.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { ProductsModule } from './products/products.module';
 
 const routes: Routes = [{
   path: '',
@@ -66,6 +67,7 @@ const routes: Routes = [{
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ProductsModule,
     RouterModule.forRoot(routes),
     LayoutModule,
     MatToolbarModule,
